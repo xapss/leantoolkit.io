@@ -1,16 +1,7 @@
 <template>
-  <section class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <ul class="card-columns list-unstyled">
-          <li v-for="section in sections" :key="section.id" class="card">
-            <p>{{ section.blocks }}</p>
-            <Block v-for="block in section.blocks" :key="block.id" v-bind:block="block" />
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <div>
+    <Section v-for="section in sections" :key="section.id" :section="section" />
+  </div>
 </template>
 
 <script>
@@ -18,9 +9,7 @@ import Strapi from 'strapi-sdk-javascript/build/main'
 const apiUrl = process.env.API_URL || 'http://localhost:1337'
 const strapi = new Strapi(apiUrl)
 
-import Block from '~/components/block.vue'
-import Jumbo from '~/components/blocks/jumbo.vue'
-import Generic from '~/components/blocks/generic.vue'
+import Section from '~/components/section.vue'
 
 export default {
   data() {
@@ -39,6 +28,7 @@ export default {
       data: {
         query: `query {
             sections {
+              type
               name
               blocks {
                 title
@@ -63,8 +53,7 @@ export default {
     })
   },
   components: {
-    Block,
-    Jumbo
+    Section
   }
 }
 </script>
