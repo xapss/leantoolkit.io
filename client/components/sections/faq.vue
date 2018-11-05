@@ -8,11 +8,8 @@
         </b-col>
       </b-row>
       <b-row>
-        <b-col v-for="block in sec.blocks" :key="block.id">
-          <!-- <div v-if="block.image" class="image-placeholder">
-            <b-img :src="'http://localhost:1337'+block.image.url" :alt="block.title" class="img-fluid"/>
-          </div> -->
-          <h3 v-html="$md.renderInline(block.title)"></h3>
+        <b-col v-for="block in sec.blocks" :key="block.id" class="col-12 col-lg-6">
+          <h4 v-html="$md.renderInline(block.title)"></h4>
           <p v-html="$md.renderInline(block.text)"></p>
           <b-btn variant="primary" href="#" v-if="block.button">{{ block.button.label }}</b-btn>
         </b-col>

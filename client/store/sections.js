@@ -8,6 +8,11 @@ export const mutations = {
   },
   emptyList(state) {
     state.list = []
+  },
+  sort(state) {
+    state.list = state.list.sort(function (a, b) {
+      return a.rank - b.rank;
+    })
   }
 }
 

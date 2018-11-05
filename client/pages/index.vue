@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Section v-for="section in sections" :key="section.id" :section="section" />
+    <Section v-for="section in sections" :key="section.id" :index="section.rank" :section="section" />
   </div>
 </template>
 
@@ -29,7 +29,10 @@ export default {
         query: `query {
             sections {
               type
+              title
               name
+              introduction
+              rank
               blocks {
                 title
                 text
@@ -50,6 +53,7 @@ export default {
         id: section.id || section._id,
         ...section
       })
+      store.commit('sections/sort')
     })
   },
   components: {

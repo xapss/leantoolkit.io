@@ -9,12 +9,13 @@
       </b-row>
       <b-row>
         <b-col v-for="block in sec.blocks" :key="block.id">
-          <!-- <div v-if="block.image" class="image-placeholder">
-            <b-img :src="'http://localhost:1337'+block.image.url" :alt="block.title" class="img-fluid"/>
-          </div> -->
-          <h3 v-html="$md.renderInline(block.title)"></h3>
-          <p v-html="$md.renderInline(block.text)"></p>
-          <b-btn variant="primary" href="#" v-if="block.button">{{ block.button.label }}</b-btn>
+          <blockquote>
+            <div v-if="block.image" class="image-placeholder m-4">
+              <b-img :src="'http://localhost:1337'+block.image.url" :alt="block.title" fluid rounded="circle"/>
+            </div>
+            <p v-html="$md.renderInline(block.text)"></p>
+            <cite v-html="$md.renderInline(block.title)">Anonymous</cite>
+          </blockquote>
         </b-col>
       </b-row>
     </b-container>

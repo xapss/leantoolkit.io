@@ -13,6 +13,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: [
+    '@/assets/scss/main.scss'
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -36,6 +39,14 @@ module.exports = {
     }
   },
   modules: [
-    'bootstrap-vue/nuxt'
-  ]
+    ['bootstrap-vue/nuxt', { css: false }],
+    '@nuxtjs/markdownit',
+    ['nuxt-sass-resources-loader', {
+        resources: ['@/assets/scss/main.scss']
+    }]
+  ],
+  markdownit: {
+    injected: true,
+    breaks: true
+  }
 }
