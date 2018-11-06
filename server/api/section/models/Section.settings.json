@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "section",
+  "info": {
+    "name": "section",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "rank": {
+      "default": 1,
+      "type": "integer",
+      "required": true
+    },
+    "introduction": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}

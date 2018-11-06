@@ -1,0 +1,12 @@
+// Variables
+@import 'bootstrap/functions';
+
+@import 'variables';
+
+// Override
+$font-family-base: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+$headings-font-family:  'Montserrat', 'Helvetica', 'Arial', sans-serif;
+
+
+// Load bootstrap
+@import 'bootstrap/bootstrap';
